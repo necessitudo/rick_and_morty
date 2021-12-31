@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rick_and_morty/feature/presentation/widgets/custom_search_delegate.dart';
 import 'package:rick_and_morty/feature/presentation/widgets/persons_list_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,9 +12,11 @@ class HomePage extends StatelessWidget {
         title: const Text('Characters'),
         centerTitle: true,
         actions: [
-          const IconButton(
-            onPressed: null,
-            icon: Icon(Icons.search),
+          IconButton(
+            onPressed: () {
+              showSearch(context: context, delegate: CustomSearchDelegate());
+            },
+            icon: const Icon(Icons.search),
             color: Colors.white,
           )
         ],
